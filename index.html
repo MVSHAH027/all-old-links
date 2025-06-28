@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>આધ્યાત્મિક જ્ઞાન સાગર | Spiritual Knowledge Hub</title>
+    
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+Gujarati:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to enhance the look and feel */
+        body {
+            /* Using Noto Sans Gujarati for Gujarati text and Inter for English */
+            font-family: 'Inter', 'Noto Sans Gujarati', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom gradient background */
+        .gradient-bg {
+            background-color: #fde68a;
+            background-image: radial-gradient(at 0% 0%, hsla(204,71%,54%,1) 0px, transparent 50%),
+                              radial-gradient(at 98% 1%, hsla(332,83%,73%,1) 0px, transparent 50%);
+        }
+        
+        /* Animation for cards appearing */
+        .card-enter {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: card-fade-in 0.5s ease-out forwards;
+        }
+
+        @keyframes card-fade-in {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-800">
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+
+        <!-- Header Section -->
+        <header class="text-center mb-8 md:mb-12">
+            <h1 id="main-title" class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">આધ્યાત્મિક જ્ઞાન સાગર</h1>
+            <p id="main-subtitle" class="text-lg md:text-xl text-gray-700">આત્મ-જાગૃતિ અને આધ્યાત્મિક વિકાસ માટેનું માર્ગદર્શન</p>
+            
+            <!-- Language Switcher -->
+            <div class="mt-6 flex justify-center items-center space-x-4">
+                <button id="btn-gu" onclick="switchLanguage('gu')" class="px-6 py-2 font-semibold rounded-full shadow-md transition-transform transform hover:scale-105 bg-white text-indigo-600 border-2 border-indigo-600">ગુજરાતી</button>
+                <button id="btn-en" onclick="switchLanguage('en')" class="px-6 py-2 font-semibold rounded-full shadow-md transition-transform transform hover:scale-105 bg-indigo-600 text-white border-2 border-indigo-600">English</button>
+            </div>
+        </header>
+
+        <!-- Content Area: Links will be dynamically inserted here -->
+        <main id="content-grid" class="space-y-6">
+            <!-- Dynamic content will be populated by JavaScript -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-gray-600">
+            <p>મનીષ વી. શાહ : વોટ્સએપ: 94299 26447 (વડોદરા)</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Data object containing all content in both languages
+        const siteData = [
+            {
+                title_gu: "પંચ પરમેષ્ઠિ જ્ઞાન સાગર",
+                title_en: "Panch Parmeshthi: Ocean of Knowledge",
+                description_gu: "જૈન ધર્મના પાંચ સર્વોચ્ચ આત્માઓ, જેમના ગુણો અને ઉપદેશો આપણને મોક્ષના માર્ગે પ્રેરે છે, તેમના વિશે ઊંડાણપૂર્વક જાણો.",
+                description_en: "Explore the teachings and virtues of the five supreme beings in Jainism who guide us on the path to liberation.",
+                url: "https://mvshah027.github.io/5-Parmeshthi/",
+                button_gu: "વધુ જાણો",
+                button_en: "Learn More"
+            },
+            {
+                title_gu: "વિવેક: સાચો માર્ગ",
+                title_en: "Vivek: The Right Path",
+                description_gu: "જીવનના દરેક પગલે યોગ્ય અને ખોટા વચ્ચેનો ભેદ પારખીને સાચા નિર્ણયો લેવા માટેનું માર્ગદર્શન મેળવો.",
+                description_en: "Guidance for making the right decisions at every step of life by discerning between right and wrong.",
+                url: "https://mvshah027.github.io/vivek/",
+                button_gu: "માર્ગદર્શન મેળવો",
+                button_en: "Get Guidance"
+            },
+            {
+                title_gu: "માતા-પિતાને સમજીએ: અમૂલ્ય સંબંધ",
+                title_en: "Understanding Parents: A Precious Bond",
+                description_gu: "માતા-પિતા સાથેના સંબંધને વધુ ગાઢ અને સમજણપૂર્વક બનાવવા માટેની પ્રેરણા અને દ્રષ્ટિકોણ.",
+                description_en: "Inspiration and perspectives to foster a deeper, more understanding relationship with your parents.",
+                url: "https://mvshah027.github.io/parent/",
+                button_gu: "સંબંધને સમજો",
+                button_en: "Explore the Bond"
+            },
+            {
+                title_gu: "જીવન ઉત્કર્ષ",
+                title_en: "Elevating Life",
+                description_gu: "આત્મિક ઉન્નતિ અને ગહન આત્મ-સાક્ષાત્કાર માટે પોડકાસ્ટ, ઇન્ફોગ્રાફિક્સ અને ક્વિઝ દ્વારા આધ્યાત્મિક જ્ઞાન મેળવો.",
+                description_en: "A curated collection of resources for spiritual upliftment and self-realization through podcasts, infographics, and quizzes.",
+                url: "https://mvshah027.github.io/elevatinglife/",
+                button_gu: "આત્મિક ઉન્નતિ કરો",
+                button_en: "Elevate Yourself"
+            },
+            {
+                title_gu: "ભગવાન મહાવીર: કેવળજ્ઞાન અને શાસન",
+                title_en: "Lord Mahavir: Enlightenment & Legacy",
+                description_gu: "ભગવાન મહાવીરના કેવળજ્ઞાન પ્રાપ્તિ અને તેમના દ્વારા સ્થાપિત શાસનના ઇતિહાસ અને સિદ્ધાંતોનું અન્વેષણ કરો.",
+                description_en: "Discover the history and principles of Lord Mahavir's attainment of omniscience and the establishment of his order.",
+                url: "https://mvshah027.github.io/tirthankar-mahaveer/",
+                button_gu: "ઇતિહાસ જાણો",
+                button_en: "Learn the History"
+            },
+            {
+                title_gu: "તીર્થંકર આદિનાથ બાળ પત્રિકા",
+                title_en: "Tirthankar Adinath Children's Corner",
+                description_gu: "બાળકો માટે ખાસ તૈયાર કરાયેલ પત્રિકા, જે ભગવાન આદિનાથના જીવન અને ઉપદેશોને મનોરંજક રીતે સમજાવે છે.",
+                description_en: "A special magazine for children, explaining the life and teachings of Lord Adinath in an engaging and fun way.",
+                url: "https://mvshah027.github.io/tirthankar-adinath/",
+                button_gu: "બાળકો માટે",
+                button_en: "For Kids"
+            },
+            {
+                title_gu: "નવ તત્ત્વ માર્ગદર્શિકા",
+                title_en: "The Guide to Nine Tattvas",
+                description_gu: "જૈન ધર્મના નવ મૂળભૂત તત્ત્વો વિશે વિસ્તૃત માહિતી, જે આત્મ-જાગૃતિ અને આધ્યાત્મિક વિકાસ માટે પાયારૂપ છે.",
+                description_en: "A detailed guide to the nine fundamental principles of Jainism, which are foundational for self-awareness and spiritual growth.",
+                url: "https://mvshah027.github.io/9-tattva/",
+                button_gu: "તત્ત્વોને સમજો",
+                button_en: "Understand the Principles"
+            },
+            {
+                title_gu: "નવતત્ત્વ ક્વિઝ",
+                title_en: "Nav Tattva Quiz",
+                description_gu: "તમારા નવ તત્ત્વોના જ્ઞાનને ચકાસો અને મજબૂત કરો. આ ઇન્ટરેક્ટિવ ક્વિઝ તમને સિદ્ધાંતોને વધુ સારી રીતે સમજવામાં મદદ કરશે.",
+                description_en: "Test and strengthen your knowledge of the Nine Tattvas with this interactive quiz designed to help you master the concepts.",
+                url: "https://mvshah027.github.io/9-Tattva-new-quiz/",
+                button_gu: "ક્વિઝ રમો",
+                button_en: "Take the Quiz"
+            },
+            {
+                title_gu: "જૈન કર્મના સિદ્ધાંતો",
+                title_en: "Principles of Jain Karma",
+                description_gu: "કર્મના આઠ પ્રકારો અને તે આપણા જીવન પર કેવી રીતે અસર કરે છે તે વિશેની ગહન સમજ મેળવો.",
+                description_en: "Gain a deep understanding of the eight types of karmas and how they influence our lives according to Jain philosophy.",
+                url: "https://mvshah027.github.io/8-karma/",
+                button_gu: "કર્મને જાણો",
+                button_en: "Explore Karma"
+            },
+            {
+                title_gu: "સુખના સાત રત્નો",
+                title_en: "The Seven Gems of Happiness",
+                description_gu: "જીવનમાં સાચું સુખ, શાંતિ અને સંતોષ લાવનારા સાત આવશ્યક ગુણો વિશેની પ્રેરણાદાયક માર્ગદર્શિકા.",
+                description_en: "An inspiring guide to the seven essential virtues that bring true happiness, peace, and contentment into one's life.",
+                url: "https://mvshah027.github.io/7-gems/",
+                button_gu: "રત્નોને શોધો",
+                button_en: "Discover the Gems"
+            },
+            {
+                title_gu: "આધુનિક સમસ્યાઓ, પ્રાચીન ઉકેલો",
+                title_en: "Modern Problems, Ancient Solutions",
+                description_gu: "ભગવાન મહાવીરના કાલાતીત ઉપદેશો આજના તણાવ અને સંઘર્ષોનો સામનો કરવા માટે કેવી રીતે મદદ કરી શકે છે તે જાણો.",
+                description_en: "Learn how the timeless teachings of Lord Mahavir offer powerful solutions to the stress and conflicts we face today.",
+                url: "https://mvshah027.github.io/modern-problem/",
+                button_gu: "શાંતિ શોધો",
+                button_en: "Find Peace"
+            },
+            {
+                title_gu: "ડિજિટલ યુગ અને માનવીય મૂલ્યો",
+                title_en: "The Digital Age & Human Values",
+                description_gu: "ડિજિટલ દુનિયામાં પ્રેમ, કરુણા અને અહિંસા જેવા માનવીય મૂલ્યોનું જતન કેવી રીતે કરવું તેની ચર્ચા.",
+                description_en: "A guide to nurturing human values like love, compassion, and non-violence in our increasingly digital world.",
+                url: "https://mvshah027.github.io/nonviolence/",
+                button_gu: "મૂલ્યોનું જતન કરો",
+                button_en: "Nurture Values"
+            }
+        ];
+
+        // Get references to DOM elements
+        const contentGrid = document.getElementById('content-grid');
+        const mainTitle = document.getElementById('main-title');
+        const mainSubtitle = document.getElementById('main-subtitle');
+        const btnGu = document.getElementById('btn-gu');
+        const btnEn = document.getElementById('btn-en');
+        const htmlTag = document.documentElement;
+
+        /**
+         * Renders the content based on the selected language
+         * @param {string} lang - The language code ('gu' or 'en')
+         */
+        function renderContent(lang) {
+            // Clear existing content
+            contentGrid.innerHTML = '';
+
+            // Set main titles
+            mainTitle.textContent = lang === 'gu' ? 'આધ્યાત્મિક જ્ઞાન સાગર' : 'Spiritual Knowledge Hub';
+            mainSubtitle.textContent = lang === 'gu' ? 'આત્મ-જાગૃતિ અને આધ્યાત્મિક વિકાસ માટેનું માર્ગદર્શન' : 'A Guide to Self-Awareness and Spiritual Growth';
+            
+            // Set document language attribute for accessibility
+            htmlTag.lang = lang;
+
+            // Generate a card for each item in the data
+            siteData.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'card-enter bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/30 transition-transform transform hover:-translate-y-1';
+                // Add a delay to the animation for each card
+                card.style.animationDelay = `${index * 100}ms`;
+
+                const title = item[`title_${lang}`];
+                const description = item[`description_${lang}`];
+                const buttonText = item[`button_${lang}`];
+
+                card.innerHTML = `
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">${title}</h2>
+                    <p class="text-gray-600 mb-5">${description}</p>
+                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:bg-indigo-700 transition-all">
+                        ${buttonText}
+                    </a>
+                `;
+                contentGrid.appendChild(card);
+            });
+        }
+        
+        /**
+         * Handles the language switching logic
+         * @param {string} lang - The language code ('gu' or 'en')
+         */
+        function switchLanguage(lang) {
+            renderContent(lang);
+            
+            // Update button styles to show the active language
+            if (lang === 'gu') {
+                btnGu.classList.remove('bg-indigo-600', 'text-white');
+                btnGu.classList.add('bg-white', 'text-indigo-600');
+                btnEn.classList.remove('bg-white', 'text-indigo-600');
+                btnEn.classList.add('bg-indigo-600', 'text-white');
+            } else {
+                btnEn.classList.remove('bg-indigo-600', 'text-white');
+                btnEn.classList.add('bg-white', 'text-indigo-600');
+                btnGu.classList.remove('bg-white', 'text-indigo-600');
+                btnGu.classList.add('bg-indigo-600', 'text-white');
+            }
+        }
+
+        // Initial render on page load
+        // We start with Gujarati as the default language
+        window.onload = () => {
+           switchLanguage('gu');
+        };
+
+    </script>
+</body>
+</html>
